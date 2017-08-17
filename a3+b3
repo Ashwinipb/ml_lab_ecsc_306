@@ -1,0 +1,18 @@
+import tensorflow as tf
+a=tf.constant(2)
+b=tf.constant(3)
+y=tf.add(a,b)
+c=tf.square(a)
+d=tf.square(b)
+e=tf.add(c,d)
+f=tf.multiply(a,b)
+g=tf.subtract(e,f)
+
+
+res=tf.multiply(y,g)
+
+with tf.Session() as sess:
+    writer = tf.summary.FileWriter("/tmp/tboard/output1_a222", sess.graph)
+    print(sess.run(res))
+    writer.close()
+
